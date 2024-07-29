@@ -79,7 +79,8 @@ public class Solution {
         if (currentSum == 0 || newLevel <= 0)
             return path;
 
-        List<Integer> pathOfCurrentSum = maxPathByLevel(maxCarrotWeight - 1, currentSum);
+        newLevel = Math.min(newLevel, currentSum);
+        List<Integer> pathOfCurrentSum = maxPathByLevel(newLevel, currentSum);
         path.addAll(pathOfCurrentSum);
 
         return path;
